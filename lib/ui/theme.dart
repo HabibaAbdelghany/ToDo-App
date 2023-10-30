@@ -40,8 +40,8 @@ class Themes {
 
   TextStyle get titleStyle {
     return TextStyle(
-      fontSize: 18,
-      fontWeight: FontWeight.w400,
+      fontSize: 22,
+      fontWeight: FontWeight.w600,
       color: Get.isDarkMode ? Colors.white : Colors.black,
     );
   }

@@ -14,17 +14,18 @@ class InputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(4.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [Text(title,style:headingStyle),
+        children: [Text(title,style:titleStyle),
+
           Container(
-margin: const EdgeInsets.only(left:10,right:10),
+margin: const EdgeInsets.only(left:7,right:7),
 width: double.infinity,
 height: 52,
 decoration:
 BoxDecoration(
-  borderRadius: BorderRadius.circular(20),
+  borderRadius: BorderRadius.circular(15),
 border: Border.all(color: Colors.black)) ,
 child:Row(
   children: [
@@ -34,7 +35,10 @@ child:Row(
       autofocus: false,
       cursorColor: Get.isDarkMode? Colors.grey[100]:Colors.grey[700],
       textAlign: TextAlign.start,
+      
       decoration: InputDecoration(
+
+
         
         hintText: hint,
       hintStyle: subHeadingStyle,

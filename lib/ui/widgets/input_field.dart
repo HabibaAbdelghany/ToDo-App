@@ -20,7 +20,8 @@ class InputField extends StatelessWidget {
         children: [Text(title,style:titleStyle),
 
           Container(
-margin: const EdgeInsets.only(left:7,right:7),
+            padding: const EdgeInsets.only(left: 14),
+margin: const EdgeInsets.only(top: 8),
 width: double.infinity,
 height: 52,
 decoration:

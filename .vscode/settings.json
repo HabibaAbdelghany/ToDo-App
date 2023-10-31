@@ -3,5 +3,6 @@
         "autofocus",
         "Munites",
         "القيمه"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

@@ -8,11 +8,12 @@ const Color white = Colors.white;
 const primaryClr = bluishClr;
 const Color darkGreyClr = Color(0xFF121212);
 const Color darkHeaderClr = Color(0xFF424242);
+//const Color backgroundColor = Colors.white;
 
 class Themes {
   static final light = ThemeData(
     primaryColor: primaryClr,
-    backgroundColor: primaryClr,
+    backgroundColor: Colors.white,
     brightness: Brightness.light,
   );
   static final dark = ThemeData(
@@ -22,43 +23,42 @@ class Themes {
   );
 }
 
-  TextStyle get headingStyle {
-    return TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.bold,
-      color: Get.isDarkMode ? Colors.white : Colors.black,
-    );
-  }
+TextStyle get headingStyle {
+  return TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: Get.isDarkMode ? Colors.white : Colors.black,
+  );
+}
 
-  TextStyle get subHeadingStyle {
-    return TextStyle(
-      fontSize: 15,
-      fontWeight: FontWeight.w400,
-      color: Get.isDarkMode ? Colors.white : Color.fromARGB(255, 138, 132, 132),
-    );
-  }
+TextStyle get subHeadingStyle {
+  return TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    color: Get.isDarkMode ? Colors.white : Color.fromARGB(255, 138, 132, 132),
+  );
+}
 
-  TextStyle get titleStyle {
-    return TextStyle(
-      fontSize: 22,
-      fontWeight: FontWeight.w600,
-      color: Get.isDarkMode ? Colors.white : Colors.black,
-    );
-  }
+TextStyle get titleStyle {
+  return TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w600,
+    color: Get.isDarkMode ? Colors.white : Colors.black,
+  );
+}
 
-  TextStyle get subTitleStyle {
-    return TextStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.w400,
-      color: Get.isDarkMode ? Colors.white : Colors.black,
-    );
-  }
-  
-  TextStyle get body2Style {
-    return TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w400,
-      color: Get.isDarkMode ? Colors.grey[200] : Colors.black,
-    );
-  }
-  
+TextStyle get subTitleStyle {
+  return TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: Get.isDarkMode ? Colors.white : Colors.black,
+  );
+}
+
+TextStyle get body2Style {
+  return TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: Get.isDarkMode ? Colors.grey[200] : Colors.black,
+  );
+}

@@ -1,6 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/controllers/task_controller.dart';
+import 'package:flutter_application_3/models/task.dart';
 import 'package:flutter_application_3/services/theme_services.dart';
 import 'package:flutter_application_3/ui/pages/add_task_page.dart';
 import 'package:flutter_application_3/ui/pages/notification_screen.dart';
@@ -13,6 +16,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 import '../widgets/button.dart';
+import '../widgets/task_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -113,6 +117,18 @@ class _HomePageState extends State<HomePage> {
         initialSelectedDate: DateTime.now(),
         selectedTextColor: white,
         selectionColor: primaryClr,
+        dateTextStyle: TextStyle(
+          color:
+              Get.isDarkMode ? Colors.white : Color.fromARGB(255, 15, 15, 15),
+        ),
+        monthTextStyle: TextStyle(
+          color:
+              Get.isDarkMode ? Colors.white : Color.fromARGB(255, 15, 15, 15),
+        ),
+        dayTextStyle: TextStyle(
+          color:
+              Get.isDarkMode ? Colors.white : Color.fromARGB(255, 15, 15, 15),
+        ),
         onDateChange: (newDate) {
           setState(() {
             selectedDate = newDate;
@@ -123,12 +139,26 @@ class _HomePageState extends State<HomePage> {
   }
 
   showData() {
-     return Stack(
+    return Expanded(child: TaskTile( 
+      Task(
+title:' d',
+note:'text note',
+isCompleted: 1,
+   date:' date',
+   startTime: '222',
+   endTime: '999',
+   color:1,
+    )),
+
+    );
+  }
+}
+/** return Stack(
       children: [
         SingleChildScrollView(
           child: Wrap(
             direction: Axis.horizontal,
-           alignment: WrapAlignment.center,
+            alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               SizedBox(height: 180,),
@@ -150,8 +180,4 @@ class _HomePageState extends State<HomePage> {
           ),
         )
       ],
-    );
-  }
-
- 
-}
+    ); */

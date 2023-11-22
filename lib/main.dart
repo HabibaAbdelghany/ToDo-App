@@ -15,12 +15,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   GetMaterialApp(
+    // الأزرق
+Color blue = Color(0xFF0000FF);
+
+// الأبيض
+Color white = Color.fromRGBO(255, 255, 255, 1);
+
+// الرمادي
+Color gray = Color.fromRGBO(128, 128, 128, 1);
+
+// الفضي
+Color silver = Color.fromRGBO(192, 192, 192, 1);
+
+      return   GetMaterialApp(
       theme: Themes.light,
       darkTheme:Themes.dark,
       themeMode:ThemeServices().theme,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: const HomePage() );
+      home: const HomePage() ); 
   }
 }

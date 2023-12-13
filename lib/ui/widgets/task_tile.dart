@@ -18,11 +18,14 @@ class TaskTile extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               color: getColor(task.color)),
-          child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          child: Row(
+             children: [
             Expanded(
               child: SingleChildScrollView(
+                
                   child: Column(
-                children: [
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                children:  [
                   Text(task.title!,
                       style: (const TextStyle(
                           fontSize: 17,
@@ -31,20 +34,23 @@ class TaskTile extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    '${task.startTime} - ${task.endTime}',
-                    style: (TextStyle(fontSize: 13, color: Colors.grey[100])),
-                  ),
+                  
                   Row(
-                    children: [
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: 
+                    [ 
                       Icon(
                         Icons.access_time_rounded,
                         color: Colors.grey[200],
-                        size: 18,
+                        size: 15,
                       ),
                       const SizedBox(
                         width: 10,
                       ),
+                       Text(
+                    '${task.startTime} - ${task.endTime}',
+                    style: (TextStyle(fontSize: 13, color: Colors.grey[100])),
+                  ),
                     ],
                   ),
                   const SizedBox(
@@ -52,7 +58,9 @@ class TaskTile extends StatelessWidget {
                   ),
                   Text(task.note!,
                       style:
-                          (TextStyle(fontSize: 15, color: Colors.grey[100]))),
+                          (TextStyle(fontSize: 15, color: Colors.grey[100]))
+                          ),
+                     
                 ],
               )),
             ),
@@ -64,7 +72,7 @@ class TaskTile extends StatelessWidget {
             ),
             RotatedBox(
               quarterTurns: 3,
-              child: Text(task.isCompleted == 0 ? 'TODO' : 'Completed',
+              child: Text(task.isCompleted == 0 ? ' TO DO    ' : 'Completed',
                   style: (const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,

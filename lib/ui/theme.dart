@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 const Color bluishClr = Color.fromARGB(255, 43, 199, 181);
-const Color orangeClr = Color(0xCFFF8746);
+const Color orangeClr = Color.fromARGB(223, 223, 79, 7);
 const Color pinkClr = Color(0xFFff4667);
 const Color white = Colors.white;
 const primaryClr = bluishClr;

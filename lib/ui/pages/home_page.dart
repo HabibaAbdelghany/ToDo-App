@@ -146,141 +146,19 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  showTask() {
-    return Expanded(
-      child: ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemBuilder: (BuildContext context, int index) {
-          var task = _taskController.taskList[index];
-          var hour = task.startTime.toString().split(':')[0];
-          var minute = task.startTime.toString().split(':')[1];
-          debugPrint('my time ' + minute);
-          debugPrint('my time ' + hour);
-          var date = DateFormat('HH:mm').parse(task.startTime!);
+  showData() {
+    return Expanded(child: TaskTile( 
+      Task(
+title:' d',
+note:'text note',
+isCompleted: 1,
+   date:' date',
+   startTime: '222',
+   endTime: '999',
+   color:1,
+    )),
 
-          var myTime = DateFormat('HH:mm').format(date);
-
-          notifyHelper.scheduledNotification(
-              int.parse(myTime.toString().split(':')[0]),
-              int.parse(myTime.toString().split(':')[1]),
-              task);
-          return AnimationConfiguration.staggeredList(
-            position: index,
-            duration: const Duration(milliseconds: 1375),
-            child: SlideAnimation(
-              horizontalOffset: 300,
-              child: FadeInAnimation(
-                child: GestureDetector(
-                  onTap: () {
-                    showBottomSheet(
-                      context,
-                      task,
-                    );
-                  },
-                  child: TaskTile(task),
-                ),
-              ),
-            ),
-          );
-        },
-        itemCount: _taskController.taskList.length,
-      ),
     );
-    /**/
-  }
-
-  showBottomSheet(BuildContext context, Task task) {
-    Get.bottomSheet(SingleChildScrollView(
-      child: Container(
-          padding: EdgeInsets.only(top: 4),
-          width: double.infinity,
-          height: 230,
-          color: Get.isDarkMode ? darkHeaderClr : Colors.white,
-          child: Column(
-            children: [
-              Flexible(
-                child: Container(
-                  height: 20,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Get.isDarkMode ? Colors.grey[600] : Colors.grey[300],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              task.isCompleted == 1
-                  ? Container()
-                  : buildBottomSheet(
-                      label: 'Task Completed',
-                      onTab: () {
-                        Get.back();
-                      },
-                      clr: primaryClr),
-              SizedBox(
-                height: 20,
-              ),
-              buildBottomSheet(
-                  label: 'Delete Task ',
-                  onTab: () {
-                    Get.back();
-                  },
-                  clr: primaryClr),
-              Divider(
-                color: Get.isDarkMode ? Colors.grey[600] : Colors.grey[300],
-              ),
-              buildBottomSheet(
-                  label: 'cancel',
-                  onTab: () {
-                    Get.back();
-                  },
-                  clr: primaryClr),
-              SizedBox(
-                height: 20,
-              ),
-            ],
-          )),
-    ));
-  }
-
-  buildBottomSheet(
-      {required String label,
-      required Function() onTab,
-      required Color clr,
-      bool isClose = false}) {
-    return GestureDetector(
-        onTap: () {},
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 1),
-          width: double.infinity,
-          height: 40,
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 2,
-              color: isClose
-                  ? Get.isDarkMode
-                      ? Colors.grey[600]!
-                      : Colors.grey[300]!
-                  : clr,
-            ),
-            borderRadius: BorderRadius.circular(20),
-            color: isClose ? Colors.transparent : clr,
-          ),
-          child: Center(
-            child: Text(
-              label,
-              style: isClose
-                  ? titleStyle
-                  : titleStyle.copyWith(
-                      color:
-//copywith function to edit some thing you already  built
-                          Get.isDarkMode ? Colors.white : Colors.black,
-                    ),
-            ),
-          ),
-        ));
   }
 }
 

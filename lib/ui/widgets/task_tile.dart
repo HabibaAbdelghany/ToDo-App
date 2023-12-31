@@ -72,7 +72,7 @@ class TaskTile extends StatelessWidget {
             ),
             RotatedBox(
               quarterTurns: 3,
-              child: Text(task.isCompleted == 0 ? ' TO DO    ' : 'Completed',
+              child: Text(task.isCompleted == 0 ? '   TO DO    ' : 'Completed',
                   style: (const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
